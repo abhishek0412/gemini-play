@@ -1,0 +1,70 @@
+{
+  "policy": {
+    "name": "Infrastructure Compliance Policy",
+    "version": "1.0.0",
+    "description": "Defines infrastructure security, deployment, and operational requirements",
+    "last_updated": "2025-07-20",
+    "rules": [
+      {
+        "id": "INF-001",
+        "category": "deployment",
+        "title": "Infrastructure as Code",
+        "description": "All infrastructure must be deployed using Infrastructure as Code principles",
+        "severity": "high",
+        "requirements": [
+          "Use Terraform, Bicep, or CloudFormation for infrastructure",
+          "Version control all infrastructure code",
+          "Implement automated testing for IaC"
+        ],
+        "compliance_frameworks": ["SOC2", "Internal"],
+        "automated_check": true,
+        "script": "scripts/check-iac-compliance.sh"
+      },
+      {
+        "id": "INF-002",
+        "category": "monitoring",
+        "title": "Infrastructure Monitoring",
+        "description": "All infrastructure components must be properly monitored",
+        "severity": "medium",
+        "requirements": [
+          "Implement comprehensive logging",
+          "Set up alerting for critical metrics",
+          "Regular health checks and monitoring"
+        ],
+        "compliance_frameworks": ["SOC2", "Internal"],
+        "automated_check": true,
+        "script": "scripts/check-monitoring.sh"
+      },
+      {
+        "id": "INF-003",
+        "category": "backup",
+        "title": "Backup and Recovery",
+        "description": "Critical data and systems must have proper backup and recovery procedures",
+        "severity": "critical",
+        "requirements": [
+          "Automated daily backups",
+          "Regular backup testing and validation",
+          "Document recovery procedures"
+        ],
+        "compliance_frameworks": ["SOC2", "Internal"],
+        "automated_check": true,
+        "script": "scripts/check-backup-policy.sh"
+      },
+      {
+        "id": "INF-004",
+        "category": "configuration",
+        "title": "Configuration Management",
+        "description": "Infrastructure configuration must follow approved standards",
+        "severity": "medium",
+        "requirements": [
+          "Use approved base images and configurations",
+          "Regular security updates and patching",
+          "Configuration drift detection"
+        ],
+        "compliance_frameworks": ["SOC2", "Internal"],
+        "automated_check": true,
+        "script": "scripts/check-configuration.sh"
+      }
+    ]
+  }
+}

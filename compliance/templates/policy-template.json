@@ -1,0 +1,24 @@
+{
+  "policy": {
+    "name": "{{POLICY_NAME}}",
+    "version": "1.0.0",
+    "description": "{{POLICY_DESCRIPTION}}",
+    "last_updated": "{{DATE}}",
+    "rules": [
+      {
+        "id": "{{POLICY_PREFIX}}-001",
+        "category": "{{CATEGORY}}",
+        "title": "{{RULE_TITLE}}",
+        "description": "{{RULE_DESCRIPTION}}",
+        "severity": "{{SEVERITY}}", // critical, high, medium, low
+        "requirements": [
+          "{{REQUIREMENT_1}}",
+          "{{REQUIREMENT_2}}"
+        ],
+        "compliance_frameworks": ["{{FRAMEWORK_1}}", "{{FRAMEWORK_2}}"],
+        "automated_check": true, // or false
+        "script": "scripts/{{SCRIPT_NAME}}.sh" // or null if no automated check
+      }
+    ]
+  }
+}

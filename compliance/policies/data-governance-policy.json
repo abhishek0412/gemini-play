@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "name": "Data Governance Policy",
+    "version": "1.0.0",
+    "description": "Defines data handling, privacy, and governance requirements",
+    "last_updated": "2025-07-20",
+    "rules": [
+      {
+        "id": "DG-001",
+        "category": "data_classification",
+        "title": "Data Classification",
+        "description": "All data must be properly classified and labeled",
+        "severity": "high",
+        "requirements": [
+          "Classify data as Public, Internal, Confidential, or Restricted",
+          "Apply appropriate labels and tags",
+          "Document data lineage and ownership"
+        ],
+        "compliance_frameworks": ["GDPR", "CCPA", "SOX"],
+        "automated_check": true,
+        "script": "scripts/check-data-classification.sh"
+      },
+      {
+        "id": "DG-002",
+        "category": "data_retention",
+        "title": "Data Retention",
+        "description": "Data must be retained according to legal and business requirements",
+        "severity": "medium",
+        "requirements": [
+          "Implement automated data retention policies",
+          "Regular data archival processes",
+          "Secure data deletion procedures"
+        ],
+        "compliance_frameworks": ["GDPR", "CCPA"],
+        "automated_check": true,
+        "script": "scripts/check-data-retention.sh"
+      },
+      {
+        "id": "DG-003",
+        "category": "privacy",
+        "title": "Data Privacy",
+        "description": "Personal data must be protected according to privacy regulations",
+        "severity": "critical",
+        "requirements": [
+          "Implement data anonymization",
+          "Provide data subject rights",
+          "Conduct privacy impact assessments"
+        ],
+        "compliance_frameworks": ["GDPR", "CCPA"],
+        "automated_check": false,
+        "script": null
+      }
+    ]
+  }
+}

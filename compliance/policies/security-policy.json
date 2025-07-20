@@ -1,0 +1,55 @@
+{
+  "policy": {
+    "name": "Security Compliance Policy",
+    "version": "1.0.0",
+    "description": "Defines security requirements and controls for the infrastructure and application",
+    "last_updated": "2025-07-20",
+    "rules": [
+      {
+        "id": "SEC-001",
+        "category": "encryption",
+        "title": "Data Encryption at Rest",
+        "description": "All data must be encrypted at rest using approved encryption algorithms",
+        "severity": "critical",
+        "requirements": [
+          "Use AES-256 encryption for data at rest",
+          "Implement proper key management",
+          "Regular key rotation every 90 days"
+        ],
+        "compliance_frameworks": ["SOC2", "ISO27001", "PCI-DSS"],
+        "automated_check": true,
+        "script": "scripts/check-encryption.sh"
+      },
+      {
+        "id": "SEC-002",
+        "category": "access_control",
+        "title": "Multi-Factor Authentication",
+        "description": "All privileged access must use multi-factor authentication",
+        "severity": "high",
+        "requirements": [
+          "Enable MFA for all admin accounts",
+          "Use hardware tokens where possible",
+          "Implement role-based access control"
+        ],
+        "compliance_frameworks": ["SOC2", "ISO27001"],
+        "automated_check": true,
+        "script": "scripts/check-mfa.sh"
+      },
+      {
+        "id": "SEC-003",
+        "category": "network_security",
+        "title": "Network Segmentation",
+        "description": "Network must be properly segmented with appropriate firewall rules",
+        "severity": "high",
+        "requirements": [
+          "Implement network segmentation",
+          "Configure firewall rules",
+          "Regular security group audits"
+        ],
+        "compliance_frameworks": ["SOC2", "ISO27001"],
+        "automated_check": true,
+        "script": "scripts/check-network-security.sh"
+      }
+    ]
+  }
+}

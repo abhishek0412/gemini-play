@@ -87,6 +87,58 @@ az deployment group create --resource-group myResourceGroup --template-file netw
 - **Azure Bicep**: Azure-native Infrastructure as Code
 - **Git**: Version control and collaboration
 
+## 🔒 Compliance
+
+This project includes comprehensive policy-as-code compliance framework to ensure adherence to security, data governance, and infrastructure standards.
+
+### Compliance Framework Structure
+
+```
+compliance/
+├── policies/                    # Policy definitions as JSON
+│   ├── security-policy.json     # Security compliance requirements
+│   ├── data-governance-policy.json # Data handling and privacy policies  
+│   └── infrastructure-policy.json  # Infrastructure and deployment policies
+├── scripts/                     # Automated compliance checking scripts
+│   ├── compliance-checker.sh    # Main compliance validation script
+│   ├── check-encryption.sh      # Encryption compliance checks
+│   ├── check-mfa.sh            # Multi-factor authentication checks
+│   └── update-docs.sh          # Documentation update automation
+├── templates/                   # Policy and report templates
+└── reports/                    # Generated compliance reports
+```
+
+### Supported Compliance Frameworks
+
+- **SOC 2** - Security, availability, processing integrity, confidentiality, and privacy
+- **ISO 27001** - Information security management systems
+- **GDPR** - General Data Protection Regulation
+- **CCPA** - California Consumer Privacy Act
+- **PCI-DSS** - Payment Card Industry Data Security Standard
+
+### Running Compliance Checks
+
+```sh
+# Run all compliance checks
+./compliance/scripts/compliance-checker.sh
+
+# Run specific policy checks
+./compliance/scripts/compliance-checker.sh --policy security
+
+# Generate compliance report
+./compliance/scripts/compliance-checker.sh --report
+```
+
+### Automated Documentation Updates
+
+The compliance framework includes automated documentation updates that trigger when:
+- Policy files are modified
+- Compliance check results change
+- New policies are added
+- Infrastructure changes are detected
+
+Last compliance check: 2025-07-20
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
