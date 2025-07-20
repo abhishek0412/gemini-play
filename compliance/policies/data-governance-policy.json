@@ -47,8 +47,8 @@
           "Conduct privacy impact assessments"
         ],
         "compliance_frameworks": ["GDPR", "CCPA"],
-        "automated_check": false,
-        "script": null
+        "automated_check": true,
+        "script": "scripts/check-data-privacy.sh"
       }
     ]
   }
