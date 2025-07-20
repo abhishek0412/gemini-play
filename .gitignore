@@ -482,3 +482,19 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# --- Added for infrastructure and compliance ---
+# Terraform
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.tfvars
+*.tfplan
+
+# Compliance Reports
+compliance/reports/
+
+# Infrastructure secrets
+*.pem
+*.key
+secrets/
