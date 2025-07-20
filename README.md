@@ -1,18 +1,43 @@
 # gemini-play
 
-This is a simple .NET console application created with the help of the Gemini CLI.
+A comprehensive project combining .NET application development with Infrastructure as Code (IaC) and automation tools. This repository demonstrates modern DevOps practices using multiple technologies for both application development and infrastructure management.
 
-## Getting Started
+## 🏗️ Project Structure
 
-To get a local copy up and running follow these simple steps.
+```
+gemini-play/
+├── Program.cs              # .NET console application entry point
+├── gemini-play.csproj      # .NET project file
+├── ansible/                # Ansible automation playbooks
+│   └── roles/             # Infrastructure automation roles
+│       ├── cache/         # Cache server configuration
+│       ├── db/            # Database setup and management
+│       ├── eks/           # Amazon EKS cluster management
+│       ├── load_balancer/ # Load balancer configuration
+│       ├── storage/       # Storage solutions setup
+│       └── windows/       # Windows server management
+├── bicep/                 # Azure Bicep templates
+│   └── network.bicep      # Network infrastructure template
+└── terraform/             # Terraform IaC templates
+    └── main.tf            # Main Terraform configuration
+```
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-*   [.NET SDK](https://dotnet.microsoft.com/download)
+#### For .NET Application:
+*   [.NET SDK](https://dotnet.microsoft.com/download) (6.0 or later)
+
+#### For Infrastructure Automation:
+*   [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/index.html)
+*   [Terraform](https://developer.hashicorp.com/terraform/downloads)
+*   [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli) (for Bicep)
+*   [Bicep CLI](https://docs.microsoft.com/en-us/azure/azure-resource-manager/bicep/install)
 
 ### Installation
 
-1.  Clone the repo
+1.  Clone the repository
     ```sh
     git clone https://github.com/abhishek0412/gemini-play.git
     ```
@@ -21,13 +46,46 @@ To get a local copy up and running follow these simple steps.
     cd gemini-play
     ```
 
-## Usage
+## 💻 Usage
 
-To run the application, execute the following command in your terminal:
+### .NET Application
+
+To run the .NET console application:
 
 ```sh
 dotnet run
 ```
+
+### Infrastructure Automation
+
+#### Using Ansible
+```sh
+# Run specific roles
+ansible-playbook -i inventory ansible/playbook.yml --tags cache
+ansible-playbook -i inventory ansible/playbook.yml --tags database
+```
+
+#### Using Terraform
+```sh
+cd terraform/
+terraform init
+terraform plan
+terraform apply
+```
+
+#### Using Azure Bicep
+```sh
+cd bicep/
+az deployment group create --resource-group myResourceGroup --template-file network.bicep
+```
+
+## 🛠️ Technologies Used
+
+- **.NET**: Console application development
+- **Ansible**: Configuration management and automation
+- **Terraform**: Infrastructure as Code for multi-cloud deployments
+- **Azure Bicep**: Azure-native Infrastructure as Code
+- **Git**: Version control and collaboration
 
 ## Contributing
 
