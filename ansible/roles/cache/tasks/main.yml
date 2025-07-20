@@ -1,0 +1,4 @@
+---
+- name: Configure cache server
+  debug:
+    msg: "Configuring cache server {{ inventory_hostname }}"

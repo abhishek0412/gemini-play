@@ -1,0 +1,4 @@
+---
+- name: Configure load balancer
+  debug:
+    msg: "Configuring load balancer {{ inventory_hostname }}"

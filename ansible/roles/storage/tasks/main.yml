@@ -1,0 +1,4 @@
+---
+- name: Configure storage account
+  debug:
+    msg: "Configuring storage account {{ inventory_hostname }}"

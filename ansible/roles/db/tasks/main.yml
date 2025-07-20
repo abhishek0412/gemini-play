@@ -1,0 +1,4 @@
+---
+- name: Configure database server
+  debug:
+    msg: "Configuring database server {{ inventory_hostname }}"

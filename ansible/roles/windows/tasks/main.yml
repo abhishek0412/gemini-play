@@ -1,0 +1,4 @@
+---
+- name: Configure Windows server
+  debug:
+    msg: "Configuring Windows server {{ inventory_hostname }}"

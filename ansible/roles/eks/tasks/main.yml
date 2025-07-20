@@ -1,0 +1,4 @@
+---
+- name: Configure EKS cluster
+  debug:
+    msg: "Configuring EKS cluster {{ inventory_hostname }}"
