@@ -1,0 +1,23 @@
+---
+- name: Configure backups
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install backup agent
+      package:
+        name: azure-backup-agent
+        state: present
+      when: ansible_os_family == "RedHat" or ansible_os_family == "Debian"
+
+    - name: Configure backup agent
+      template:
+        src: backup-config.j2
+        dest: /etc/azure-backup/config.ini
+        mode: '0644'
+      notify: Restart backup service
+
+  handlers:
+    - name: Restart backup service
+      service:
+        name: azure-backup
+        state: restarted
